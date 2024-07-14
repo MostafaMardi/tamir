@@ -1,0 +1,222 @@
+/* @import url(http://awebfont.ir/css?id=1116); */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+@font-face{
+    font-family: myvazir;
+    src: url(font/Vazir-Bold.eot),url(font/Vazir-Bold.ttf),url(font/Vazir-Bold.woff),url(font/Vazir-Bold.woff2);
+}
+html{
+    background-color: #dde0e5;
+    min-height: 100%;
+
+}
+body{
+    font-family: 'myvazir' , 'tahoma' , 'Arial';
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+
+}
+.header{
+    width: 90%;
+    height: 120px;
+    background-color: white;
+    border-radius: 100px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#menu{
+    display: flex;
+    list-style-type: none;
+}
+.menu_list{
+    margin: 0px 10px;
+}
+.menu_list:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+#call{
+    display: flex;
+    flex-direction: column;
+}
+.call1{
+    background-color: blueviolet;
+    border-radius: 20px;
+    padding: 10px 10px;
+}
+hr{
+    margin: 10px 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+nav img:last-of-type{ 
+     display: none; 
+ }
+ .section1 , .section3{
+    display: flex;
+    width: 90%;
+    /* background-color: black; */
+    height: 100%;
+    margin: 10px auto;
+
+ }
+ .section1 .img_right , .section3 .i_left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ }
+ .section1 .img_right h1 , .section3 .i_left h1 , .section4 .serv h1 ,.section4 .serv p {
+    color: black;
+    text-align: center;
+    margin: 10px;
+ }
+ .section1 .img_right p ,  .section2 .serv p  , .section3 .i_left h2{
+    color: black;
+    /* line-height: 27px; */
+    text-align: justify;
+    margin: 10px;
+ }
+
+
+ .section1 .img_right #call2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .section1 .img_right #call2 a {
+    margin: 10px;
+ }
+ .section1 .img_left , .section3 .i_right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .section1 img , .section3 img{
+    max-width: 100%;
+    height: auto;
+ }
+ .section2 , .section4{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+    border-radius: 20px;
+ }
+ 
+ .section2 .serv , .section4 .serv {
+    background-color: white;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    align-self: stretch;
+ }
+ .section2 .serv img {
+    max-width: 35%;
+    /* width: 35%; */
+    height: auto;
+ }
+ .section2 .serv h2{
+    color: red;
+    text-align: center;
+    margin: 10px;
+ }
+
+@media only screen and (max-width: 1330px) {
+    .section1 .img_right #call2{
+        flex-direction: column;
+    }
+    .section2{
+        display: none;
+    }
+    .section4 {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .section4 .serv{
+        width: 45%;
+    }
+    #menu{
+        display: none;
+        position: absolute;
+        flex-direction: column;
+        width: 90%;
+        top: 130px;
+        text-align: center;
+        border-radius: 100px;
+        background-color: white;
+    }
+    #menu.show {
+        display: flex;
+    }
+    nav img:last-of-type{ 
+        display: inline-block; 
+    }
+}
+@media only screen and (max-width: 1000px){
+    .section1 {
+        flex-direction: column;
+    }
+    .section1 .img_right , .section1 .img_left {
+        width: 100%;
+    }
+    .section1 .img_right #call2{
+        flex-direction: row;
+    }
+}
+@media only screen and (max-width: 630px) {
+    .header, #menu{
+        width: 100%;
+        min-width: 320px;
+    }
+    .section1 , .section3 {
+        width: 100%;
+    }
+    .section4 .serv{
+        width: 100%;
+    }
+    .section3 .i_right{
+        display: none;
+    }
+    .section3 .i_left{
+        width: 100%;
+    }
+    .section1 .img_right #call2{
+        flex-direction: column;
+    }
+}
+@media only screen and (max-width: 510px){
+    nav #call{
+        font-size: small;
+    }
+}
+@media only screen and (max-width: 470px){
+    nav #call{
+        font-size: 10px;
+    }
+    
+}
+@media only screen and (max-width: 420px){
+    nav img:nth-child(1),nav img:nth-child(4) {
+        display: none;
+    }
+    nav #call{
+        font-size: medium;
+    }
+}
