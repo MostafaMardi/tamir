@@ -1,77 +1,58 @@
 
-
-.slider-wrapper{
+main{
+    width: min(1200px, 90vw);
+    margin: auto;
+}
+.slider{
+    width: 100%;
+    height: var(--height);
     overflow: hidden;
-    max-width: 1200px;
-    margin: 0 70px 55px;
+    mask-image: linear-gradient(
+        to right,
+        transparent,
+        #000 10% 90%,
+        transparent
+    );
 }
-.card-list .card-item{
-    color: black;
-    user-select: none;
-    padding: 35px;
+.slider .list{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    backdrop-filter: blur(30px);
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    min-width: calc(var(--width) * var(--quantity));
+    position: relative;
 }
-.card-list .card-item .user-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 40px;
-    border: 3px solid rgba(0, 0, 0, 1);
-    /* padding: 4px; */
-
+.slider .list .item{
+    width: var(--width);
+    height: var(--height);
+    position: absolute;
+    left: 100%;
+    animation: autoRun 10s linear infinite;
+    transition: filter 0.5s;
+    animation-delay: calc( (10s / var(--quantity)) * (var(--position) - 1) - 10s)!important;
 }
-.card-list .card-item .user-profession{
-    font-size: 1.15rem;
-    color: #3e3e3e;
-    font-weight: 500;
-    margin: 14px 0 40px;
+.slider .list .item img{
+    width: 100%;
 }
-.card-list .card-item .message-button {
-    font-size: 1.25rem;
-    padding: 10px 35px;
-    color: #030728;
-    border-radius: 6px;
-    font-weight: 500;
-    cursor: pointer ;
-    background: #fff;
-    border: 1px solid transparent;
-    transition: 0.2s ease;
-}
-.card-list .card-item .message-button:hover{
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid #fff;
-    color: #fff;
-}
-.slider-wrapper .swiper-pagination-bullet{
-    background: #000;
-    height: 15px;
-    width: 15px;
-}
-
-.slider-wrapper .swiper-slide-button{
-    color: #000;
-    margin-top: -50px;
-    transition: 0.2s ease;
-
-}
-.slider-wrapper .swiper-slide-button:hover{
-    color: blue;
-}
-
-@media (max-width: 768px) {
-    .slider-wrapper{
-        margin: 0 10px 40px;
+@keyframes autoRun{
+    from{
+        left: 100%;
+    }to{
+        left: calc(var(--width) * -1);
     }
-
-    .slider-wrapper .swiper-slide-button{
-        display: none;
+}
+.slider:hover .item{
+    animation-play-state: paused!important;
+    filter: grayscale(1);
+}
+.slider .item:hover{
+    filter: grayscale(0);
+}
+.slider[reverse="true"] .item{
+    animation: reversePlay 10s linear infinite;
+}
+@keyframes reversePlay{
+    from{
+        left: calc(var(--width) * -1);
+    }to{
+        left: 100%;
     }
-
 }
