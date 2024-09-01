@@ -239,7 +239,7 @@ nav img:last-of-type{
         width: 100%;
     }
     .section3 .h2x{
-        font-size: 1px;
+        font-size: 16px;
     }
     .section1 .img_right #call2{
         flex-direction: column;
@@ -259,6 +259,9 @@ nav img:last-of-type{
     }
     .section1 .img_right p , .section4 p , .section3 h2{
         font-size: 10px;
+    }
+    .section3 .h2x{
+        font-size: 5px;
     }
 }
 @media only screen and (max-width: 420px){
